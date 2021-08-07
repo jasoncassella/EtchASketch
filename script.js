@@ -31,6 +31,7 @@ function reset() {
 
   start();
 
+	//i have no fucking idea why i need to include this event listener function inside this reset function but it doesnt work if i dont so excuse this stupid ass code
   document.querySelectorAll('.grid-item').forEach((element) => {
     element.addEventListener('mouseover', (e) => {
       e.target.style.backgroundColor = 'purple';

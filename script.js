@@ -1,8 +1,16 @@
 const container = document.getElementById('container');
 const resetButton = document.getElementById('reset');
 
-let randomColor = Math.floor(Math.random()*16777215).toString(16);
-makeRows(16);
+reset();
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 function makeRows(number) {
   container.style.setProperty('--grid-rows', number);
@@ -28,16 +36,10 @@ function reset() {
     makeRows(numberOfSquares);
   }
 
-  //i have no fucking idea why i need to include this event listener function inside this reset function but it doesnt work if i dont so excuse this stupid ass code
   document.querySelectorAll('.grid-item').forEach((element) => {
     element.addEventListener('mouseover', (e) => {
-    e.target.style.backgroundColor = '#' + randomColor;
+      e.target.style.backgroundColor = getRandomColor();
     });
   });
 }
 
-document.querySelectorAll('.grid-item').forEach((element) => {
-  element.addEventListener('mouseover', (e) => {
-    e.target.style.backgroundColor = '#' + randomColor;
-  });
-});

@@ -4,12 +4,13 @@
 }
 
 #container {
+  margin: auto;
   display: grid;
   width: 500px;
   height: 500px;
   grid-template-rows: repeat(var(--grid-rows), 0.2fr);
   grid-template-columns: repeat(var(--grid-cols), 0.2fr);
-  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid-item {

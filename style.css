@@ -21,3 +21,11 @@
 .grid-item {
   padding: 0.2em;
 }
+
+#reset {
+  color: inherit;
+  cursor: pointer;
+  padding: 0.2em;
+  margin-top: 1em;
+  margin-left: 1em;
+}

@@ -35,8 +35,10 @@ function reset() {
 
   let numberOfSquares = prompt('how many squares per side?');
 
-  if (numberOfSquares >= 80) {
-    console.log('no');
+  if (numberOfSquares > 80) {
+    let warning = document.createElement('p');
+    container.appendChild(warning);
+    warning.textContent = "80x80 is the max";
   } else {
     makeRows(numberOfSquares);
   }

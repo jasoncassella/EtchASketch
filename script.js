@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 const resetButton = document.getElementById('reset');
 
-reset();
+makeRows(16);
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';

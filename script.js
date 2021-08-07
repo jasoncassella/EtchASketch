@@ -19,6 +19,11 @@ function makeRows(number) {
     let cell = document.createElement('div');
     container.appendChild(cell).className = 'grid-item';
   }
+  document.querySelectorAll('.grid-item').forEach((element) => {
+    element.addEventListener('mouseover', (e) => {
+      e.target.style.backgroundColor = getRandomColor();
+    });
+  });
 }
 
 resetButton.addEventListener('click', reset);
@@ -35,11 +40,4 @@ function reset() {
   } else {
     makeRows(numberOfSquares);
   }
-
-  document.querySelectorAll('.grid-item').forEach((element) => {
-    element.addEventListener('mouseover', (e) => {
-      e.target.style.backgroundColor = getRandomColor();
-    });
-  });
 }
-

@@ -5,13 +5,13 @@
 
 #container {
   display: grid;
-  row-gap: 0.2em;
-  column-gap: 0.2em;
+  width: 500px;
+  height: 500px;
   grid-template-rows: repeat(var(--grid-rows), 0.2fr);
   grid-template-columns: repeat(var(--grid-cols), 0.2fr);
+  border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .grid-item {
   padding: 0.2em;
-  border: 1px solid #ddd;
 }

@@ -1,17 +1,7 @@
 const container = document.getElementById('container');
 const resetButton = document.getElementById('reset');
 
-start();
-
-function start() {
-  let numberOfSquares = prompt('how many squares per side?');
-
-  if (numberOfSquares >= 80) {
-    console.log('no');
-  } else {
-    makeRows(numberOfSquares);
-  }
-}
+makeRows(16);
 
 function makeRows(number) {
   container.style.setProperty('--grid-rows', number);
@@ -29,9 +19,15 @@ function reset() {
     container.removeChild(container.firstChild);
   }
 
-  start();
+  let numberOfSquares = prompt('how many squares per side?');
 
-	//i have no fucking idea why i need to include this event listener function inside this reset function but it doesnt work if i dont so excuse this stupid ass code
+  if (numberOfSquares >= 80) {
+    console.log('no');
+  } else {
+    makeRows(numberOfSquares);
+  }
+
+  //i have no fucking idea why i need to include this event listener function inside this reset function but it doesnt work if i dont so excuse this stupid ass code
   document.querySelectorAll('.grid-item').forEach((element) => {
     element.addEventListener('mouseover', (e) => {
       e.target.style.backgroundColor = 'purple';
